@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'monster_api.apps.MonsterApiConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
