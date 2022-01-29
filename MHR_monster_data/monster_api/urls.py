@@ -4,6 +4,7 @@ from . import views
 
 router = DefaultRouter()
 router.register(r'monster', views.MonsterViewSet, basename="monster")
+router.register(r'monster-hzv', views.MonsterHZVViewSet, basename="monster-hzv")
 
 urlpatterns = [
     path('', include(router.urls)),
