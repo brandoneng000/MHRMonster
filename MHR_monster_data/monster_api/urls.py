@@ -5,11 +5,12 @@ from . import views
 
 router = DefaultRouter()
 router.register(r'monster', views.MonsterViewSet, basename="monster")
-router.register(r'monster-hzv', views.MonsterHZVViewSet, basename="monster-hzv")
 
 app_name = 'monster'
 urlpatterns = [
     path('monsterdata/', include(router.urls)),
+    # path('monster-hzv/<int:pk>', views.monster_hzv),
+    path('monster-hzv/', views.MonsterHZVs.as_view()),
     path('', views.monster_list, name='monsters'),
+    path('<int:pk>', views.monster_detail, name='monsters-detail'),
 ]
-

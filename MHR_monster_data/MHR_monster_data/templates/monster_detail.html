@@ -1,0 +1,12 @@
+{% load static %}
+<html>
+    <h1>{{monster_hzv.pop}} </h1>
+    <img src="{% static monster_hzv.pop %}" alt="My image">
+    <ul>
+        {% for hzv in monster_hzv %}
+            {% comment %} <li>Monster ID is {{ hzv.part_id }} and name is {{ hzv.part_name }}</li> {% endcomment %}
+            <li>Monster ID is {{ hzv }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
