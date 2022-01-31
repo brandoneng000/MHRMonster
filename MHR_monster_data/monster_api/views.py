@@ -32,8 +32,8 @@ def monster_list(request):
     monsters = response.json()
     for mon in monsters:
         mon['monster_image'] = 'monster_api/'+ str(mon['id']) +'.png'
-    print(len(monsters))
-    print("\n\n\n\n")
+    print(request.get_full_path())
+    print('\n\n\n\n')
 
     return render(request, "home.html", {'monsters': monsters})
 
@@ -47,8 +47,5 @@ def monster_detail(request, pk):
     monster_hzv = response.json()
     monster_hzv.append(image)
     monster_hzv.append(monster_name['monster_name'])
-    # print(monster_hzv)
-    print(len(monster_hzv))
-    print("\n\n\n\n")
 
     return render(request, "monster_detail.html", {'monster_hzv': monster_hzv})

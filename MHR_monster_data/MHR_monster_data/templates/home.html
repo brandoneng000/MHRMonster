@@ -1,11 +1,15 @@
 {% load static %}
 <html>
-    <img src="{% static 'monster_api/0.png' %}" alt="My image">
     <h1>Monsters</h1>
     <ul>
         {% for monster in monsters %}
-        <li>Monster ID is {{ monster.id }} and name is {{ monster.monster_name }}</li>
-        <br> <img src="{% static monster.monster_image %}"> </br>
+            {% comment %} <li>Monster ID is {{ monster.id }} and name is {{ monster.monster_name }}</li> {% endcomment %}
+            <a href="{{monster.id}}">
+                <img src="{% static monster.monster_image %}">
+            </a>
+            {% if forloop.counter|divisibleby:5 %}
+                <br></br>
+            {% endif %}
         {% endfor %}
     </ul>
 </body>
