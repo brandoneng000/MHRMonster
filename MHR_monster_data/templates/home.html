@@ -1,0 +1,10 @@
+<html>
+<body>
+    <h1>Monsters</h1>
+    <ul>
+        {% for monster in monsters %}
+        <li>Monster ID is {{ monster.id }} and name is {{ monster.monster_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
