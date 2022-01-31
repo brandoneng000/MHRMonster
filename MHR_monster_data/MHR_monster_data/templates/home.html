@@ -1,7 +1,15 @@
 {% load static %}
 <html>
-    <h1>Monsters</h1>
-    <ul>
+    <style>
+        body {
+            background-color: #343a40;
+        }
+        h1 {
+            color: f8f9fa
+        }
+    </style>
+    <body>
+        <h1>Monsters</h1>
         {% for monster in monsters %}
             {% comment %} <li>Monster ID is {{ monster.id }} and name is {{ monster.monster_name }}</li> {% endcomment %}
             <a href="{{monster.id}}">
@@ -11,6 +19,6 @@
                 <br></br>
             {% endif %}
         {% endfor %}
-    </ul>
+        </body>
 </body>
 </html>
