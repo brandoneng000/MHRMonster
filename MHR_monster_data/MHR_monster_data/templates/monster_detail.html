@@ -1,12 +1,43 @@
 {% load static %}
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+</style>
 <html>
     <h1>{{monster_hzv.pop}} </h1>
-    <img src="{% static monster_hzv.pop %}" alt="My image">
-    <ul>
-        {% for hzv in monster_hzv %}
-            {% comment %} <li>Monster ID is {{ hzv.part_id }} and name is {{ hzv.part_name }}</li> {% endcomment %}
-            <li>Monster ID is {{ hzv }}</li>
-        {% endfor %}
-    </ul>
+    <img src="{% static monster_hzv.pop %}">
+    <body>
+        <table style="width:100%">
+            <tr>
+                <th>Part name</th>
+                <th>State</th>
+                <th> <img src="{% static 'icons/sever.png' %}"></th>
+                <th> <img src="{% static 'icons/stun.png' %}"></th>
+                <th> <img src="{% static 'icons/ammo.png' %}"></th>
+                <th> <img src="{% static 'icons/fire.png' %}"></th>
+                <th> <img src="{% static 'icons/water.png' %}"></th>
+                <th> <img src="{% static 'icons/thunder.png' %}"></th>
+                <th> <img src="{% static 'icons/ice.png' %}"></th>
+                <th> <img src="{% static 'icons/dragon.png' %}"></th>
+                <th> <img src="{% static 'icons/stun.png' %}"></th>
+            </tr>
+            {% for hzv in monster_hzv %}
+                <tr>
+                    <th> {{hzv.part_name}}</th>
+                    <th> {{hzv.state}}</th>
+                    <th> {{hzv.sever}}</th>
+                    <th> {{hzv.impact}}</th>
+                    <th> {{hzv.ammo}}</th>
+                    <th> {{hzv.fire}}</th>
+                    <th> {{hzv.water}}</th>
+                    <th> {{hzv.thunder}}</th>
+                    <th> {{hzv.ice}}</th>
+                    <th> {{hzv.dragon}}</th>
+                    <th> {{hzv.stun}}</th>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
 </body>
 </html>
