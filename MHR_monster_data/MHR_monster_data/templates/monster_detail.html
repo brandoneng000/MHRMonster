@@ -2,7 +2,7 @@
 <html>
     <style>
         table, th, td {
-          border:1px solid #e9ecef;
+            border:1px solid #e9ecef;
         }
         body {
             background-color: #343a40;
@@ -22,8 +22,14 @@
             text-align: center;
             vertical-align: middle;
         }
+        button {
+            background-color: #343a40; 
+            border:1px solid #e9ecef;
+            color: #f8f9fa
+        }
     </style>
     <h1>{{monster_hzv.pop}} </h1>
+    <button onclick="history.back()">Go Back</button>
     <img src="{% static monster_hzv.pop %}">
     <body>
         <table style="width:100%">
