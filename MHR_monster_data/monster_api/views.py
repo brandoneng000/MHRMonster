@@ -5,14 +5,19 @@ from rest_framework.response import Response
 import requests
 from rest_framework.decorators import api_view
 from rest_framework import generics
+from rest_framework import permissions
+
 
 from .serializers import MonsterHZVSerializer, MonsterSerializer
 from .models import Monster, Monster_HZV
+from monster_api.permissions import IsOwnerOrReadOnly
 
 # Create your views here.
 class MonsterViewSet(viewsets.ModelViewSet):
     queryset = Monster.objects.all().order_by('id')
     serializer_class = MonsterSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly,
+                      IsOwnerOrReadOnly]
 
 class MonsterHZVs(generics.ListAPIView):
     serializer_class = MonsterHZVSerializer
