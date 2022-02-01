@@ -21,18 +21,25 @@ class MonsterHZVs(generics.ListAPIView):
         if self.request.method == 'GET':
             queryset = Monster_HZV.objects.all()
             monster = self.request.GET.get('monster_id', None)
+            part = self.request.GET.get('part_name', None)
             if monster is not None:
                 queryset = queryset.filter(monster_id=monster)
+            if part is not None:
+                queryset = queryset.filter(part_name=part)
             return queryset
 
 
 def monster_list(request):
     response = requests.get('http://127.0.0.1:8000/monsterdata/monster/')
+    average = requests.get('http://127.0.0.1:8000/monster-hzv/?part_name=Average')
     
     monsters = response.json()
+    monster_averages = average.json()
     for mon in monsters:
         mon['monster_image'] = 'monster_api/'+ str(mon['id']) +'.png'
-        
+
+    monsters += monster_averages[::-1]
+    
     return render(request, "home.html", {'monsters': monsters})
 
 def monster_detail(request, pk):

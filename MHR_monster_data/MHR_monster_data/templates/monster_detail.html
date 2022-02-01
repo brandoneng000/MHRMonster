@@ -7,7 +7,7 @@
         body {
             background-color: #343a40;
         }
-        h1,th {
+        h1,th,td {
             color: f8f9fa
         }
         h1 {
@@ -18,6 +18,10 @@
             margin-left: auto;
             margin-right: auto;
         }
+        td {
+            text-align: center;
+            vertical-align: middle;
+        }
     </style>
     <h1>{{monster_hzv.pop}} </h1>
     <img src="{% static monster_hzv.pop %}">
@@ -26,29 +30,29 @@
             <tr>
                 <th>Part name</th>
                 <th>State</th>
-                <th> <img src="{% static 'icons/sever.png' %}"></th>
-                <th> <img src="{% static 'icons/stun.png' %}"></th>
-                <th> <img src="{% static 'icons/ammo.png' %}"></th>
-                <th> <img src="{% static 'icons/fire.png' %}"></th>
-                <th> <img src="{% static 'icons/water.png' %}"></th>
-                <th> <img src="{% static 'icons/thunder.png' %}"></th>
-                <th> <img src="{% static 'icons/ice.png' %}"></th>
-                <th> <img src="{% static 'icons/dragon.png' %}"></th>
-                <th> <img src="{% static 'icons/stun.png' %}"></th>
+                <th> <img src="{% static 'icons/sever.png' %} "  width="15%" height="15%"> </th>
+                <th> <img src="{% static 'icons/impact.png' %} "  width="15%" height="15%"> </th>
+                <th> <img src="{% static 'icons/ammo.png' %} "  width="15%" height="15%"> </th>
+                <th> <img src="{% static 'icons/fire.png' %} "  width="15%" height="15%"> </th>
+                <th> <img src="{% static 'icons/water.png' %} "  width="15%" height="15%"> </th>
+                <th> <img src="{% static 'icons/thunder.png' %} "  width="15%" height="15%"> </th>
+                <th> <img src="{% static 'icons/ice.png' %} "  width="15%" height="15%"> </th>
+                <th> <img src="{% static 'icons/dragon.png' %} "  width="15%" height="15%"> </th>
+                <th> <img src="{% static 'icons/stun.png' %} "  width="15%" height="15%"> </th>
             </tr>
             {% for hzv in monster_hzv %}
                 <tr>
-                    <th> {{hzv.part_name}}</th>
-                    <th> {{hzv.state}}</th>
-                    <th> {{hzv.sever}}</th>
-                    <th> {{hzv.impact}}</th>
-                    <th> {{hzv.ammo}}</th>
-                    <th> {{hzv.fire}}</th>
-                    <th> {{hzv.water}}</th>
-                    <th> {{hzv.thunder}}</th>
-                    <th> {{hzv.ice}}</th>
-                    <th> {{hzv.dragon}}</th>
-                    <th> {{hzv.stun}}</th>
+                    <td> {{hzv.part_name}} </td>
+                    <td> {{hzv.state}} </td>
+                    <td> {{hzv.sever}} </td>
+                    <td> {{hzv.impact}} </td>
+                    <td> {{hzv.ammo}} </td>
+                    <td> {{hzv.fire}} </td>
+                    <td> {{hzv.water}} </td>
+                    <td> {{hzv.thunder}} </td>
+                    <td> {{hzv.ice}} </td>
+                    <td> {{hzv.dragon}} </td>
+                    <td> {{hzv.stun}} </td>
                 </tr>
             {% endfor %}
         </table>
