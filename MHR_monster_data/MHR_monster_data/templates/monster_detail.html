@@ -28,23 +28,23 @@
             color: #f8f9fa
         }
     </style>
+    <button onclick="history.back()">Back</button>
     <h1>{{monster_hzv.pop}} </h1>
-    <button onclick="history.back()">Go Back</button>
     <img src="{% static monster_hzv.pop %}">
     <body>
-        <table style="width:100%">
+        <table width="100%">
             <tr>
                 <th>Part name</th>
                 <th>State</th>
-                <th> <img src="{% static 'icons/sever.png' %} "  width="15%" height="15%"> </th>
-                <th> <img src="{% static 'icons/impact.png' %} "  width="15%" height="15%"> </th>
-                <th> <img src="{% static 'icons/ammo.png' %} "  width="15%" height="15%"> </th>
-                <th> <img src="{% static 'icons/fire.png' %} "  width="15%" height="15%"> </th>
-                <th> <img src="{% static 'icons/water.png' %} "  width="15%" height="15%"> </th>
-                <th> <img src="{% static 'icons/thunder.png' %} "  width="15%" height="15%"> </th>
-                <th> <img src="{% static 'icons/ice.png' %} "  width="15%" height="15%"> </th>
-                <th> <img src="{% static 'icons/dragon.png' %} "  width="15%" height="15%"> </th>
-                <th> <img src="{% static 'icons/stun.png' %} "  width="15%" height="15%"> </th>
+                <th> <img src="{% static 'icons/sever.png' %} "  width="30px" height="30px"> </th>
+                <th> <img src="{% static 'icons/impact.png' %} "  width="30px" height="30px"> </th>
+                <th> <img src="{% static 'icons/ammo.png' %} "  width="30px" height="30px"> </th>
+                <th> <img src="{% static 'icons/fire.png' %} "  width="30px" height="30px"> </th>
+                <th> <img src="{% static 'icons/water.png' %} "  width="30px" height="30px"> </th>
+                <th> <img src="{% static 'icons/thunder.png' %} "  width="30px" height="30px"> </th>
+                <th> <img src="{% static 'icons/ice.png' %} "  width="30px" height="30px"> </th>
+                <th> <img src="{% static 'icons/dragon.png' %} "  width="30px" height="30px"> </th>
+                <th> <img src="{% static 'icons/stun.png' %} "  width="30px" height="30px"> </th>
             </tr>
             {% for hzv in monster_hzv %}
                 <tr>
