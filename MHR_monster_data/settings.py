@@ -95,6 +95,7 @@ DATABASES['default'] = DATABASES.get('default', {})
 
 # Update with environment configuration.
 DATABASES['default'].update({
+    'ENGINE': 'django.db.backends.mysql',
     'NAME': url.path[1:],
     'USER': url.username,
     'PASSWORD': url.password,
