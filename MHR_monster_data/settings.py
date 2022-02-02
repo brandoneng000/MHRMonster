@@ -143,7 +143,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, '/MHR_monster_data/static/')
 STATIC_URL = '/MHR_monster_data/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'MHR_monster_data\static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 # Default primary key field type
