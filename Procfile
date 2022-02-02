@@ -1,0 +1,1 @@
+web: gunicorn MHR_monster_data.wsgi
