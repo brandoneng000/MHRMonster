@@ -27,7 +27,7 @@ SECRET_KEY = '5fecae749977f630b4b5588603790a1683f1c2fd1cb0807a8dee4d6d402bf6e7eb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://mhr-monsters.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
