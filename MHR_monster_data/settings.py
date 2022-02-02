@@ -86,20 +86,19 @@ DATABASES = {
     }
 }
 
-if 'DATABASE_URL' in os.environ:
-        url = urllib.parse(os.environ['CLEARDB_DATABASE_URL'])
+url = urllib.parse(os.environ['CLEARDB_DATABASE_URL'])
 
-        # Ensure default database exists.
-        DATABASES['default'] = DATABASES.get('default', {})
+# Ensure default database exists.
+DATABASES['default'] = DATABASES.get('default', {})
 
-        # Update with environment configuration.
-        DATABASES['default'].update({
-            'NAME': url.path[1:],
-            'USER': url.username,
-            'PASSWORD': url.password,
-            'HOST': url.hostname,
-            'PORT': url.port,
-        })
+# Update with environment configuration.
+DATABASES['default'].update({
+    'NAME': url.path[1:],
+    'USER': url.username,
+    'PASSWORD': url.password,
+    'HOST': url.hostname,
+    'PORT': url.port,
+})
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
