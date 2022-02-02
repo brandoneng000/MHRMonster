@@ -37,27 +37,29 @@ class MonsterHZVs(generics.ListAPIView):
 def monster_list(request):
     # response = requests.get('http://127.0.0.1:8000/monsterdata/monster/')
     # average = requests.get('http://127.0.0.1:8000/monster-hzv/?part_name=Average')
+    response = requests.get('https://mhr-monsters.herokuapp.com/monsterdata/monster/')
+    average = requests.get('https://mhr-monsters.herokuapp.com//monster-hzv/?part_name=Average')
     
-    # monsters = response.json()
-    # monster_averages = average.json()
-    # for mon in monsters:
-    #     mon['monster_image'] = 'monster_api/'+ str(mon['id']) +'.png'
+    monsters = response.json()
+    monster_averages = average.json()
+    for mon in monsters:
+        mon['monster_image'] = 'monster_api/'+ str(mon['id']) +'.png'
 
-    # monsters += monster_averages[::-1]
+    monsters += monster_averages[::-1]
     
-    # return render(request, "home.html", {'monsters': monsters})
-    pass
+    return render(request, "home.html", {'monsters': monsters})
 
 def monster_detail(request, pk):
     # response = requests.get('http://127.0.0.1:8000/monster-hzv/?monster_id=' + str(pk))
     # name = requests.get('http://127.0.0.1:8000/monsterdata/monster/' + str(pk) + '/')
+    response = requests.get('https://mhr-monsters.herokuapp.com/monster-hzv/?monster_id=' + str(pk))
+    name = requests.get('https://mhr-monsters.herokuapp.com//monsterdata/monster/' + str(pk) + '/')
     
-    # monster_name = name.json()
-    # image = 'monster_api/'+ str(pk) +'.png'
+    monster_name = name.json()
+    image = 'monster_api/'+ str(pk) +'.png'
 
-    # monster_hzv = response.json()
-    # monster_hzv.append(image)
-    # monster_hzv.append(monster_name['monster_name'])
+    monster_hzv = response.json()
+    monster_hzv.append(image)
+    monster_hzv.append(monster_name['monster_name'])
 
-    # return render(request, "monster_detail.html", {'monster_hzv': monster_hzv})
-    pass
+    return render(request, "monster_detail.html", {'monster_hzv': monster_hzv})
