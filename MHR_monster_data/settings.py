@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+import urllib
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,7 +88,7 @@ WSGI_APPLICATION = 'MHR_monster_data.wsgi.application'
 
 DATABASES = {}
 
-url = os.environ.get(os.environ['CLEARDB_DATABASE_URL'])
+url = urllib.parse.urlparse(os.environ['CLEARDB_DATABASE_URL'])
 
 # Ensure default database exists.
 DATABASES['default'] = DATABASES.get('default', {})
