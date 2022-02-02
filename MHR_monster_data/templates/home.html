@@ -37,63 +37,65 @@
     </style>
     <body>
         <h1>Monsters</h1>
-            <div class="row">
-                {% for monster in monsters %}
-                    <div class="column">
-                        <table>
-                            <th>
-                                {{monster.monster_name}}
-                            </th>
-                            <tr>
-                                <td>
-                                    <a href="{{monster.id}}">
-                                        <img style="display:block;" src="{% static monster.monster_image %}" class="center">
-                                    </a>
-                                </td>
-                                <td>
-                                    {% with monsters.pop as hzv%}
-                                        <h1 style=font-size:20px>
-                                            {{hzv.part_name}}
-                                        </h1>
-                                        <table>
-                                            <tr>
-                                                <td> <img src="{% static 'icons/sever.png' %} "  width="30px" height="30px"> </td>
-                                                <td> <img src="{% static 'icons/impact.png' %} "  width="30px" height="30px"> </td>
-                                                <td> <img src="{% static 'icons/ammo.png' %} "  width="30px" height="30px"> </td>
-                                            </tr>
-                                            <tr>
-                                                <td> {{hzv.sever}} </td>
-                                                <td> {{hzv.impact}} </td>
-                                                <td> {{hzv.ammo}} </td>
-                                            </tr>
-                                            <tr>
-                                                <th> <img src="{% static 'icons/fire.png' %} "  width="30px" height="30px"> </th>
-                                                <th> <img src="{% static 'icons/water.png' %} "  width="30px" height="30px"> </th>
-                                                <th> <img src="{% static 'icons/thunder.png' %} "  width="30px" height="30px"> </th>
-                                            </tr>
-                                            <tr>
-                                                <td> {{hzv.fire}} </td>
-                                                <td> {{hzv.water}} </td>
-                                                <td> {{hzv.thunder}} </td>
-                                            </tr>
-                                            <tr>
-                                                <th> <img src="{% static 'icons/ice.png' %} "  width="30px" height="30px"> </th>
-                                                <th> <img src="{% static 'icons/dragon.png' %} "  width="30px" height="30px"> </th>
-                                                <th> <img src="{% static 'icons/stun.png' %} "  width="30px" height="30px"> </th>
-                                            </tr>
-                                            <tr>
-                                                <td> {{hzv.ice}} </td>
-                                                <td> {{hzv.dragon}} </td>
-                                                <td> {{hzv.stun}} </td>
-                                            </tr>
-                                        </table>
-                                    {% endwith %}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                {% endfor %}
-            </div>
-        </body>
-</body>
+        <div class="row">
+            {% for monster in monsters %}
+                <div class="column">
+                    <table>
+                        <th>
+                            {{monster.monster_name}}
+                        </th>
+                        <tr>
+                            <td>
+                                <a href="{{monster.id}}">
+                                    <img style="display:block;" src="{% static monster.monster_image %}" class="center">
+                                </a>
+                            </td>
+                            <td>
+                                {% with monsters.pop as hzv%}
+                                    <h1 style=font-size:20px>
+                                        {{hzv.part_name}}
+                                    </h1>
+                                    <table>
+                                        <tr>
+                                            <td> <img src="{% static 'icons/sever.png' %} "  width="30px" height="30px"> </td>
+                                            <td> <img src="{% static 'icons/impact.png' %} "  width="30px" height="30px"> </td>
+                                            <td> <img src="{% static 'icons/ammo.png' %} "  width="30px" height="30px"> </td>
+                                        </tr>
+                                        <tr>
+                                            <td> {{hzv.sever}} </td>
+                                            <td> {{hzv.impact}} </td>
+                                            <td> {{hzv.ammo}} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> <img src="{% static 'icons/fire.png' %} "  width="30px" height="30px"> </th>
+                                            <th> <img src="{% static 'icons/water.png' %} "  width="30px" height="30px"> </th>
+                                            <th> <img src="{% static 'icons/thunder.png' %} "  width="30px" height="30px"> </th>
+                                        </tr>
+                                        <tr>
+                                            <td> {{hzv.fire}} </td>
+                                            <td> {{hzv.water}} </td>
+                                            <td> {{hzv.thunder}} </td>
+                                        </tr>
+                                        <tr>
+                                            <th> <img src="{% static 'icons/ice.png' %} "  width="30px" height="30px"> </th>
+                                            <th> <img src="{% static 'icons/dragon.png' %} "  width="30px" height="30px"> </th>
+                                            <th> <img src="{% static 'icons/stun.png' %} "  width="30px" height="30px"> </th>
+                                        </tr>
+                                        <tr>
+                                            <td> {{hzv.ice}} </td>
+                                            <td> {{hzv.dragon}} </td>
+                                            <td> {{hzv.stun}} </td>
+                                        </tr>
+                                    </table>
+                                {% endwith %}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+    <footer>
+        <p style="color:f8f9fa">Monster Hunter and Art by Capcom</p>
+    </footer>
 </html>
