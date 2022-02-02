@@ -38,7 +38,7 @@ def monster_list(request):
     # response = requests.get('http://127.0.0.1:8000/monsterdata/monster/')
     # average = requests.get('http://127.0.0.1:8000/monster-hzv/?part_name=Average')
     response = requests.get('https://mhr-monsters.herokuapp.com/monsterdata/monster/')
-    average = requests.get('https://mhr-monsters.herokuapp.com//monster-hzv/?part_name=Average')
+    average = requests.get('https://mhr-monsters.herokuapp.com/monster-hzv/?part_name=Average')
     
     monsters = response.json()
     monster_averages = average.json()
@@ -53,7 +53,7 @@ def monster_detail(request, pk):
     # response = requests.get('http://127.0.0.1:8000/monster-hzv/?monster_id=' + str(pk))
     # name = requests.get('http://127.0.0.1:8000/monsterdata/monster/' + str(pk) + '/')
     response = requests.get('https://mhr-monsters.herokuapp.com/monster-hzv/?monster_id=' + str(pk))
-    name = requests.get('https://mhr-monsters.herokuapp.com//monsterdata/monster/' + str(pk) + '/')
+    name = requests.get('https://mhr-monsters.herokuapp.com/monsterdata/monster/' + str(pk) + '/')
     
     monster_name = name.json()
     image = 'monster_api/'+ str(pk) +'.png'
