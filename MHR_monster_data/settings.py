@@ -87,7 +87,7 @@ DATABASES = {
 }
 
 if 'DATABASE_URL' in os.environ:
-        url = urllib.parse(os.environ['DATABASE_URL'])
+        url = urllib.parse(os.environ['CLEARDB_DATABASE_URL'])
 
         # Ensure default database exists.
         DATABASES['default'] = DATABASES.get('default', {})
