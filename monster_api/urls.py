@@ -1,9 +1,9 @@
 from unicodedata import name
 from django.urls import include, path
-from rest_framework.routers import DefaultRouter
+from rest_framework.routers import DefaultRouter, SimpleRouter
 from . import views
 
-router = routers.SimpleRouter()
+router = SimpleRouter()
 router.register(r'monster', views.MonsterViewSet, basename="monster")
 
 app_name = 'monster'
