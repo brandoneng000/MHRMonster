@@ -1,7 +1,5 @@
 # MHRMonsterDjangoAPI
 
-[https://mhr-monsters.herokuapp.com/](https://mhr-monsters.herokuapp.com/)
-
 ## Overview
 
 MHR Monster is a site deployed on Heroku using Python/Django. The website presents users with
